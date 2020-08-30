@@ -23,7 +23,7 @@ export default {
 
 <style>
 #recommand{
-  background: #e9e3e3;
+  background: #ffffff;
   height: 300px;
   padding: 5px;
   margin-bottom: 10px;

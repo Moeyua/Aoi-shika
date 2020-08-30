@@ -56,6 +56,7 @@ export default {
 }
 h2{
   text-align:left;
-  margin-left:10px
+  margin-left:10px;
+  margin-bottom: 10px;
 }
 </style>

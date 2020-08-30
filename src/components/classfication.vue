@@ -29,7 +29,7 @@ export default {
 
 <style>
 #classfication{
-  background: bisque;
+  background: #ffffff;
   height: 180px;
   padding: 10px;
   margin-bottom: 10px;

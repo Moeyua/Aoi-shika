@@ -29,12 +29,13 @@ export default {
 
 <style>
 #hot-goods{
-  background: #e9e3e3;
+  background: #ffffff;
   padding: 5px;
   margin-bottom: 10px;
   border-radius: 20px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  margin-bottom: 60px;
 }
 </style>

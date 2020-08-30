@@ -1,18 +1,21 @@
 <template>
-  <div id="navbar">
-      <a href="#home">{{bar1}}</a>
-      <a href="#news">{{bar2}}</a>
-      <a href="#contact">{{bar3}}</a>
-      <a href="#about">{{bar4}}</a>
-    </div>
+  <footer id="navbar">
+        <a :href=item.href v-for="item in items" :key="item.content">
+          <img :src=item.src :alt=item.content>
+          {{item.content}}
+        </a>
+  </footer>
 </template>
 
 <script>
 var data = {
-  bar1: '首页',
-  bar2: '分类',
-  bar3: '购物车',
-  bar4: '个人中心'
+  items: [
+    {content: '首页', href: '#', src: '../../static/home_light.png'},
+    {content: '分类', href: '#', src: '../../static/list.png'},
+    {content: '购物车', href: '#', src: '../../static/cart_light.png'},
+    {content: '个人中心', href: '#', src: '../../static/my_light.png'}
+  ]
+
 }
 export default {
   data () {
@@ -28,7 +31,7 @@ export default {
 
 #navbar{
   overflow: hidden;
-  background-color: #333;
+  background-color: #f1f2f6;
   position: fixed;
   display: flex;
   flex-flow: row nowrap;
@@ -37,14 +40,24 @@ export default {
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 60px;
 }
 #navbar a {
-  display: block;
-  color: #f2f2f2;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-around;
+  color: black;
   text-align: center;
-  padding: 14px 16px;
+  height: 60px;
+  width: 90px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 5px;
+}
+#navbar img{
+  width: 32px;
+  height: 32px;
+  margin: 5px 0;
 }
 
 </style>

@@ -20,7 +20,7 @@ export default {
 
 <style>
 #goods{
-  background: #e9e3e3;
+  background: #ffffff;
   height: 145px;
   width: cacl(100%-50px);
   margin: 5px;
@@ -32,7 +32,7 @@ export default {
     width: 80px;
     height: 80px;
     border-radius: 10px;
-    background: cyan;
+    background: #1e32b4;
     margin-bottom: 5px;
 }
 #price{
