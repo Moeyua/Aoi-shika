@@ -1,16 +1,17 @@
 <template>
-  <div id="goods">
-      <div id="pic"><img src="#" alt=""></div>
+  <a id="goods" :href="href">
+      <div id="pic"><img :src="src" :alt="name"></div>
       <div id="name">{{name}}</div>
       <div id="price">￥{{price}}</div>
-  </div>
+  </a>
 </template>
 
 <script>
-var data = {name: '商品名称', price: 'xx'}
+var data = {}
 export default {
+  props: ['name', 'price', 'src', 'href'],
   data () {
-    return data
+    return {data}
   },
   name: 'goods',
   methods: {},
@@ -18,22 +19,28 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #goods{
+  display: block;
   background: #ffffff;
   height: 145px;
-  width: cacl(100%-50px);
+  width: 40%;
   margin: 5px;
   border-radius: 10px;
   text-align: left;
   font-size: 13px;
+  text-decoration: none;
 }
 #pic{
-    width: 80px;
-    height: 80px;
+    width: 100%;
+    height: 100px;
     border-radius: 10px;
-    background: #1e32b4;
+    /* background: #1e32b4; */
     margin-bottom: 5px;
+}
+#pic img{
+  width: 100%;
+  height: 100%;
 }
 #price{
     color: red;

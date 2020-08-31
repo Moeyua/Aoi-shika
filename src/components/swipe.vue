@@ -2,7 +2,7 @@
   <div class="swipe">
     <div class="swipeshow">
       <transition-group tag="ul" name="image">
-        <li v-for="(img, index) in imgArray" v-show="index===mark" :key="index">
+        <li v-for="(img, index) in imgArray" v-show="index===mark" :key="img">
           <a href="#">
             <img :src='img'>
           </a>
@@ -17,10 +17,10 @@
 
 <script>
 var imgArray = [
-  '../../static/77088105_p0.jpg',
-  '../../static/77088105_p1.jpg',
-  '../../static/77088105_p3.jpg',
-  '../../static/77088105_p2.jpg'
+  'https://www.sonystyle.com.cn/content/dam/sonystyle/common/homepage/activity/zxhd_bravia_gaming_2007_193.jpg',
+  'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b746a4db2e0473cc076a3a4b9bbe0235.jpg?w=632&h=340',
+  'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/816a66edef10673b4768128b41804cae.jpg?w=632&h=340',
+  'https://www.sonystyle.com.cn/content/dam/sonystyle/common/homepage/activity/zxhd_wh_1000xm4_19hx.jpg'
 ]
 export default {
   data () {
@@ -71,6 +71,7 @@ export default {
   }
   img {
     height: 200px;
+    width: 100%;
     /* border-radius: 20px; */
   }
   .bar {
