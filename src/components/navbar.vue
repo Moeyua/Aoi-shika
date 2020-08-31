@@ -1,19 +1,21 @@
 <template>
   <footer id="navbar">
-        <a :href=item.href v-for="item in items" :key="item.id" @click.left="changePic(item)" :status="item.status">
-          <img :src = src(item) :alt=item.content>
+    <!-- 动态传入参数 -->
+        <router-link :to="{ path: item.href }"
+         v-for="item in items" :key="item.id" @click.native="changePic(item)">
+          <img :src = src(item) :alt=item.content :status="items.status">
           {{item.content}}
-        </a>
+        </router-link>
   </footer>
 </template>
 
 <script>
 var data = {
   items: [
-    {content: '首页', href: '#', id: 'home', status: true},
-    {content: '分类', href: '#', id: 'all', status: false},
-    {content: '购物车', href: '#', id: 'cart', status: false},
-    {content: '个人中心', href: '#', id: 'my', status: false}
+    {content: '首页', href: '/', id: 'home', status: true},
+    {content: '分类', href: '/all', id: 'all', status: false},
+    {content: '购物车', href: '/cart', id: 'cart', status: false},
+    {content: '个人中心', href: '/my', id: 'my', status: false}
   ]
 }
 var changePic = function (item) {
@@ -23,6 +25,7 @@ var changePic = function (item) {
   }
   item.status = !item.status
 }
+
 var src = function () {
   // 通过闭包函数实现参数传递，改变图标链接
   return function (item) {
@@ -59,6 +62,7 @@ export default {
   width: 100%;
   height: 60px;
 }
+/* 未激活样式 */
 #navbar a {
   display: flex;
   flex-flow: column nowrap;
@@ -71,9 +75,12 @@ export default {
   text-decoration: none;
   font-size: 5px;
 }
-#navbar [status=true]{
-  color: #1e32b4;
+
+/* 激活样式 */
+.router-link-exact-active{
+  color: #1e32b4 !important;
 }
+
 #navbar img{
   width: 32px;
   height: 32px;

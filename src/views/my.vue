@@ -1,20 +1,16 @@
 <template>
-  <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
-    <router-view></router-view>
-    <navbar></navbar>
+  <div id="my">
+    <router-view/>
   </div>
 </template>
 
 <script>
-
-import navbar from './components/navbar'
-
+import navbar from '../components/navbar'
 export default {
   data () {
     return {}
   },
-  name: 'App',
+  name: 'my',
   methods: {},
   components: {
     navbar: navbar
@@ -24,7 +20,7 @@ export default {
 
 <style>
 
-#app {
+#my {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -36,7 +32,9 @@ export default {
   height: calc(100%-20px);
   width: calc(100%-20px);
 }
-#button {
-  position: absolute;
+h2{
+  text-align:left;
+  margin-left:10px;
+  margin-bottom: 10px;
 }
 </style>
