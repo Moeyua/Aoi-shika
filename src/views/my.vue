@@ -1,40 +1,122 @@
 <template>
   <div id="my">
+    <router-link to="/my/comment" id="comment"><img :src="comment"></router-link>
+    <div id="profile">
+      <img :src="srcHead"><span>{{name}}</span>
+    </div>
+    <ul id="list">
+      <router-link :to="{ path: li.href }" v-for="li in lists" :key="li.id" >
+        <img :src="src(li.id)" :alt="li.title">
+        <img :src="src('right')" style="position: absolute;right:20px;">
+        {{li.title}}
+      </router-link>
+    </ul>
     <router-view/>
   </div>
 </template>
 
 <script>
-import navbar from '../components/navbar'
+var src = function (name) {
+  return '../static/icon/' + name + '.png?time=' + new Date().getTime()
+}
+var data = {
+  name: 'Evod Moeyua',
+  lists: [
+    {title: '我的订单', href: '#', id: 'form'},
+    {title: '待付款', href: '#', id: 'pay'},
+    {title: '待发货', href: '#', id: 'send'},
+    {title: '待收货', href: '#', id: 'deliver'},
+    {title: '优惠券', href: '#', id: 'ticket'}
+  ],
+  comment: '../static/icon/comment.png?time=' + new Date().getTime(),
+  srcHead: '../static/head/kumiko1.jpg?time=' + new Date().getTime()
+}
 export default {
   data () {
-    return {}
+    return data
   },
   name: 'my',
-  methods: {},
+  methods: {src},
   components: {
-    navbar: navbar
   }
 }
 </script>
 
-<style>
+<style scoped>
 
 #my {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background: #f1f4fa;
+  color: #666666;
+}
+#profile{
+  position: absolute;
   display: flex;
   flex-flow: column nowrap;
-  margin: 10px;
-  height: calc(100%-20px);
-  width: calc(100%-20px);
+  align-items: center;
+  justify-content: center;
+  /* 使用计算属性时必须在运算符两边加空格隔开 */
+  top: calc((50% - 163.2px)/2);
+  left: calc((100% - 140px)/2);
 }
-h2{
-  text-align:left;
-  margin-left:10px;
-  margin-bottom: 10px;
+#my #profile img{
+  width: 100px;
+  height: 100px;
+  border-radius: 80px;
+  margin: 20px;
+  box-shadow:  15px 15px 30px #c1c3c8, -15px -15px 30px #ffffff;
 }
+#my #comment{
+  display: block;
+  position: fixed;
+  right: 0;
+  top:0;
+  width: 32px;
+  height: 32px;
+  margin: 20px;
+}
+#my #comment img{
+  width: 32px;
+  height: 32px;
+  /* box-shadow: inset 15px 15px 30px #c1c3c8,inset -15px -15px 30px #ffffff; */
+
+}
+#my span{
+  font-size: 20px;
+  font-weight: 700;
+}
+#list{
+  position: absolute;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  bottom: 0;
+  width: 95%;
+  padding: 50px 0;
+  border-radius: 30px;
+  background: #ffffff;
+  box-shadow:  -11px -11px 22px #d4d4d4, 11px 11px 22px #ffffff;
+}
+#list a{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  text-decoration: none;
+  font-weight: 700;
+  color: #666666;
+}
+#list img{
+  margin-left: 50px;
+  margin-right: 10px;
+  width: 32px;
+  height: 32px;
+}
+
 </style>

@@ -30,9 +30,9 @@ var src = function () {
   // 通过闭包函数实现参数传递，改变图标链接
   return function (item) {
     if (item.status) {
-      return '../../static/' + item.id + '_fill.png'
+      return '../../static/icon/' + item.id + '_fill.png'
     } else {
-      return '../../static/' + item.id + '.png'
+      return '../../static/icon/' + item.id + '.png'
     }
   }
 }

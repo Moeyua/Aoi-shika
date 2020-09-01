@@ -33,7 +33,7 @@ export default {
   display: flex;
   flex-flow: column nowrap;
   margin: 10px;
-  height: calc(100%-20px);
+  height: 100%;
   width: calc(100%-20px);
 }
 #button {
