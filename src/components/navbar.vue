@@ -2,8 +2,9 @@
   <footer id="navbar">
     <!-- 动态传入参数 -->
         <router-link :to="{ path: item.href }"
-         v-for="item in items" :key="item.id" @click.native="changePic(item)">
-          <img :src = src(item) :alt=item.content :status="items.status">
+         v-for="item in items" :key="item.id">
+         <!-- name为prop，是从父组件传入 -->
+          <img :src = src(item,name) :alt=item.content>
           {{item.content}}
         </router-link>
   </footer>
@@ -12,24 +13,17 @@
 <script>
 var data = {
   items: [
-    {content: '首页', href: '/', id: 'home', status: true},
-    {content: '分类', href: '/all', id: 'all', status: false},
-    {content: '购物车', href: '/cart', id: 'cart', status: false},
-    {content: '个人中心', href: '/my', id: 'my', status: false}
+    {content: '首页', href: '/', id: 'home'},
+    {content: '分类', href: '/all', id: 'all'},
+    {content: '购物车', href: '/cart', id: 'cart'},
+    {content: '个人中心', href: '/my', id: 'my'}
   ]
-}
-var changePic = function (item) {
-  // 先清除掉所有按钮的样式，再为选中按钮添加样式
-  for (var i = 0; i < 4; i++) {
-    this.items[i].status = false
-  }
-  item.status = !item.status
 }
 
 var src = function () {
   // 通过闭包函数实现参数传递，改变图标链接
-  return function (item) {
-    if (item.status) {
+  return function (item, name) {
+    if (item.id === name) {
       return '../../static/icon/' + item.id + '_fill.png'
     } else {
       return '../../static/icon/' + item.id + '.png'
@@ -37,11 +31,12 @@ var src = function () {
   }
 }
 export default {
+  props: ['name'],
   data () {
     return data
   },
   name: 'navbar',
-  methods: {changePic},
+  methods: {},
   computed: {src},
   components: {}
 }

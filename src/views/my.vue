@@ -2,7 +2,10 @@
   <div id="my">
     <router-link to="/my/comment" id="comment"><img :src="comment"></router-link>
     <div id="profile">
-      <img :src="srcHead"><span>{{name}}</span>
+      <router-link to="/login">
+        <img :src="srcHead">
+      </router-link>
+      <span>{{name}}</span>
     </div>
     <ul id="list">
       <router-link :to="{ path: li.href }" v-for="li in lists" :key="li.id" >
@@ -11,11 +14,13 @@
         {{li.title}}
       </router-link>
     </ul>
+    <navbar name='my'></navbar>
     <router-view/>
   </div>
 </template>
 
 <script>
+import navbar from '../components/navbar'
 var src = function (name) {
   return '../static/icon/' + name + '.png?time=' + new Date().getTime()
 }
@@ -38,6 +43,7 @@ export default {
   name: 'my',
   methods: {src},
   components: {
+    navbar: navbar
   }
 }
 </script>
@@ -59,16 +65,26 @@ export default {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+  width: 300px;
+  height: 300px;
   /* 使用计算属性时必须在运算符两边加空格隔开 */
-  top: calc((50% - 163.2px)/2);
-  left: calc((100% - 140px)/2);
+  top: calc((50% - 300px)/2);
+  left: calc((100% - 300px)/2);
 }
 #my #profile img{
   width: 100px;
   height: 100px;
   border-radius: 80px;
+  box-shadow:  -11px -11px 22px #d4d4d4, 11px 11px 22px #ffffff;
+}
+#my #profile a{
+  text-decoration: none;
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 80px;
   margin: 20px;
-  box-shadow:  15px 15px 30px #c1c3c8, -15px -15px 30px #ffffff;
+  box-shadow:  -11px -11px 22px #d4d4d4, 11px 11px 22px #ffffff;
 }
 #my #comment{
   display: block;
@@ -88,6 +104,7 @@ export default {
 #my span{
   font-size: 20px;
   font-weight: 700;
+  width: 100%;
 }
 #list{
   position: absolute;

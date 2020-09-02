@@ -10,6 +10,7 @@
     <br>
     <h2>热门商品</h2>
     <hotGoods></hotGoods>
+    <navbar name='home'></navbar>
     <router-view/>
   </div>
 </template>
@@ -20,6 +21,7 @@ import swipe from '../components/swipe'
 import classfication from '../components/classfication'
 import recommand from '../components/recommand'
 import hotGoods from '../components/hot-goods'
+import navbar from '../components/navbar'
 
 export default {
   data () {
@@ -32,7 +34,8 @@ export default {
     swipe: swipe,
     classfication: classfication,
     recommand: recommand,
-    hotGoods: hotGoods
+    hotGoods: hotGoods,
+    navbar: navbar
   }
 }
 </script>
