@@ -20,10 +20,12 @@
 <script>
 function add () {
   this.numbers++
+  this.$emit('numberChanged', [this.name, 1])
 }
 function sub () {
   if (this.numbers > 0) {
     this.numbers--
+    this.$emit('numberChanged', [this.name, -1])
   }
 }
 export default {
