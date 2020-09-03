@@ -1,10 +1,12 @@
 <template>
-  <div id="home">
+  <div id="cart">
     <h1>购物车</h1>
     <cart_goods v-for="item in goods" v-bind="item" :key="item.name"></cart_goods>
     <div id="summary">
+      <p style="color: red">合计：￥</p>
+      <button>提交订单</button>
     </div>
-    <navbar name='home'></navbar>
+    <navbar name='cart'></navbar>
     <router-view/>
   </div>
 </template>
@@ -13,10 +15,10 @@
 import navbar from '../components/navbar'
 import cartGoods from '../components/cart_goods'
 var goods = [
-  {src: '#', name: '名称1', details: '型号', price: '价格', number: '数量'},
-  {src: '#', name: '名称2', details: '型号', price: '价格', number: '数量'},
-  {src: '#', name: '名称3', details: '型号', price: '价格', number: '数量'},
-  {src: '#', name: '名称4', details: '型号', price: '价格', number: '数量'}
+  {src: '#', name: '名称1', type: '型号', price: '10', number: '1'},
+  {src: '#', name: '名称2', type: '型号', price: '5', number: '1'},
+  {src: '#', name: '名称3', type: '型号', price: '100', number: '1'},
+  {src: '#', name: '名称4', type: '型号', price: '27', number: '1'}
 ]
 export default {
   data () {
@@ -30,9 +32,30 @@ export default {
     navbar: navbar,
     cart_goods: cartGoods
   },
-  computed: {}
+  computed: {
+    total: function () {
+      return 0
+    }
+  }
 }
 </script>
 
-<style>
+<style scoped>
+#cart_goods{
+  margin: 20px 0;
+  border-radius: 20px;
+}
+#summary{
+  position: fixed;
+  border-top: 1px solid #666666;
+  height: 7%;
+  width: 90%;
+  padding: 0 5%;
+  left: 0px;
+  bottom: 60px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
 </style>

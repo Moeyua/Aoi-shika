@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import home from '@/views/home'
 import cart from '@/views/cart'
 import my from '@/views/my'
+import all from '@/views/all'
 import regist from '@/views/regist'
 import login from '@/views/login'
 
@@ -13,6 +14,7 @@ export default new Router({
     {path: '/', name: 'home', component: home},
     {path: '/cart', name: 'cart', component: cart},
     {path: '/my', name: 'my', component: my},
+    {path: '/all', name: 'all', component: all},
     {path: '/regist', name: 'regist', component: regist},
     {path: '/login', name: 'login', component: login}
   ]
