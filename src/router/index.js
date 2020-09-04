@@ -6,6 +6,7 @@ import my from '@/views/my'
 import all from '@/views/all'
 import regist from '@/views/regist'
 import login from '@/views/login'
+import level2 from '@/components/level2'
 
 Vue.use(Router)
 
@@ -14,8 +15,15 @@ export default new Router({
     {path: '/', name: 'home', component: home},
     {path: '/cart', name: 'cart', component: cart},
     {path: '/my', name: 'my', component: my},
-    {path: '/all', name: 'all', component: all},
     {path: '/regist', name: 'regist', component: regist},
-    {path: '/login', name: 'login', component: login}
+    {path: '/login', name: 'login', component: login},
+    {
+      path: '/all',
+      name: 'all',
+      component: all,
+      children: [
+        {path: '/all/:name', name: 'level2', component: level2}
+      ]
+    }
   ]
 })

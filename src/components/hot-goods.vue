@@ -33,7 +33,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #hot-goods{
   background: #ffffff;
   padding: 5px;

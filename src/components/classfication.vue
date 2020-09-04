@@ -38,7 +38,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #classfication{
   background: #ffffff;
   height: 180px;

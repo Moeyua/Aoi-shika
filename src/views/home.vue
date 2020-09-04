@@ -58,6 +58,7 @@ export default {
 }
 #main{
   position: absolute;
+  margin: 0 10px;
   left: 0;
   top: 70px;
   z-index: 0;
