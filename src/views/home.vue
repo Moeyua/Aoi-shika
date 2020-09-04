@@ -2,14 +2,16 @@
   <div id="home">
     <!-- <img src="./assets/logo.png"> -->
     <search></search>
-    <swipe></swipe>
-    <classfication></classfication>
-    <br>
-    <h2>为你推荐</h2>
-    <recommand></recommand>
-    <br>
-    <h2>热门商品</h2>
-    <hotGoods></hotGoods>
+    <div id="main">
+      <swipe></swipe>
+      <classfication></classfication>
+      <br>
+      <h2>为你推荐</h2>
+      <recommand></recommand>
+      <br>
+      <h2>热门商品</h2>
+      <hotGoods></hotGoods>
+    </div>
     <navbar name='home'></navbar>
     <router-view/>
   </div>
@@ -40,7 +42,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 #home {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -52,6 +54,13 @@ export default {
   flex-flow: column nowrap;
   height: calc(100%-20px);
   width: calc(100%-20px);
+  z-index: 99;
+}
+#main{
+  position: absolute;
+  left: 0;
+  top: 70px;
+  z-index: 0;
 }
 h2{
   text-align:left;

@@ -1,9 +1,11 @@
 <template>
+<div id="top">
   <div id="search">
     <img src="../../static/scan_light.png" alt="扫一扫" id="scan-img">
     <input type="search" placeholder="搜索"/>
     <img src="../../static/search_light.png" alt="搜索" id="search-img">
   </div>
+</div>
 </template>
 
 <script>
@@ -17,11 +19,22 @@ export default {
 }
 </script>
 
-<style>
-#search {
+<style scoped>
+#top{
+  top: 0;
+  left: 0px;
+  height: 60px;
+  position: fixed;
   width: 100%;
+  border-bottom: 1px solid #666666;
+  background-color: #1e32b4;
+  overflow: hidden;
+  z-index: 999;
+}
+#search{
+  margin: 10px 0 0 10px;
+  width: calc(100% - 20px);
   height: 40px;
-  margin-bottom: 10px;
 }
 #search img{
   position: absolute;
