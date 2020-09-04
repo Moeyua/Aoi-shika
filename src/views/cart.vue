@@ -4,7 +4,7 @@
     <cart_goods v-for="item in goods" v-bind="item" :key="item.name" @numberChanged = "changeNumber($event)"></cart_goods>
     <div id="summary">
       <p style="color: red">合计：￥{{total}}</p>
-      <button>提交订单</button>
+      <button>结算</button>
     </div>
     <navbar name='cart'></navbar>
     <router-view/>
