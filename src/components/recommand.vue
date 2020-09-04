@@ -31,7 +31,7 @@ export default {
 
 <style scoped>
 #recommand{
-  background: #ffffff;
+  background: #f7f7f7;
   padding: 5px;
   margin-bottom: 10px;
   border-radius: 20px;

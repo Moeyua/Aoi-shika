@@ -12,13 +12,15 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {path: '/', name: 'home', component: home},
+    {path: '/', redirect: {name: 'home'}},
+    {path: '/home', name: 'home', component: home},
     {path: '/cart', name: 'cart', component: cart},
     {path: '/my', name: 'my', component: my},
     {path: '/regist', name: 'regist', component: regist},
     {path: '/login', name: 'login', component: login},
     {
       path: '/all',
+      redirect: '/all/父类1',
       name: 'all',
       component: all,
       children: [

@@ -26,8 +26,8 @@ export default {
   height: 60px;
   position: fixed;
   width: 100%;
-  border-bottom: 1px solid #666666;
   background-color: #1e32b4;
+  box-shadow:  5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
   overflow: hidden;
   z-index: 999;
 }

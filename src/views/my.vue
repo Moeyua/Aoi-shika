@@ -53,11 +53,14 @@ export default {
 #my {
   margin: 0;
   padding: 0;
+  top: 0;
+  position: absolute;
+  left: 0px;
   width: 100%;
   height: 100%;
   border-radius: 0;
-  background: #f1f4fa;
-  color: #666666;
+  background: #1c2fa8;
+  color: #eeeeee;
 }
 #profile{
   position: absolute;
@@ -75,7 +78,8 @@ export default {
   width: 100px;
   height: 100px;
   border-radius: 80px;
-  box-shadow:  -11px -11px 22px #d4d4d4, 11px 11px 22px #ffffff;
+  background: #1c2fa8;
+  box-shadow:  20px 20px 60px #18288f, -20px -20px 60px #2036c1;
 }
 #my #profile a{
   text-decoration: none;
@@ -84,7 +88,7 @@ export default {
   height: 100px;
   border-radius: 80px;
   margin: 20px;
-  box-shadow:  -11px -11px 22px #d4d4d4, 11px 11px 22px #ffffff;
+  box-shadow:  20px 20px 60px #18288f, -20px -20px 60px #2036c1;
 }
 #my #comment{
   display: block;
@@ -108,16 +112,17 @@ export default {
 }
 #list{
   position: absolute;
+  margin: 0 10px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
   align-items: center;
   bottom: 0;
   width: 95%;
-  padding: 50px 0;
+  padding: 40px 0 60px 0;
   border-radius: 30px;
   background: #ffffff;
-  box-shadow:  -11px -11px 22px #d4d4d4, 11px 11px 22px #ffffff;
+  box-shadow:  20px 20px 60px #18288f, -20px -20px 60px #2036c1;
 }
 #list a{
   width: 100%;

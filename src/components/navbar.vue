@@ -46,7 +46,8 @@ export default {
 
 #navbar{
   overflow: hidden;
-  background-color: #f1f2f6;
+  background-color: #ffffff;
+  box-shadow:  5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
   position: fixed;
   display: flex;
   flex-flow: row nowrap;
@@ -56,7 +57,6 @@ export default {
   left: 0;
   width: 100%;
   height: 60px;
-  border-top: 1px solid #666666;
 }
 /* 未激活样式 */
 #navbar a {

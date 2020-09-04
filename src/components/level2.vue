@@ -2,7 +2,7 @@
   <ul id="lv2">
         <li v-for="item in this.$route.params.li2" :key="item.name">
           <router-link to="item.href">
-              {{$route.params.name}}
+              <img :src="item.src">
               {{item.name}}
           </router-link>
         </li>
@@ -19,13 +19,24 @@ export default {
 #lv2{
   position: absolute;
   width: calc(100% - 120px);
-  /* height后期可以删掉 */
-  height: 100%;
   left: 120px;
   top: 65px;
-  background-color: rgb(239, 236, 241);
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-around;
 }
-li{
+li,a{
   list-style: none;
+  width: 70px;
+  height: 100px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #666666;
+  font-size: 10px;
+}
+img{
+  width: 70px;
+  height: 80px;
 }
 </style>

@@ -29,7 +29,9 @@ var li2 = [
   {name: '子类7', href: '#', src: '#'},
   {name: '子类8', href: '#', src: '#'},
   {name: '子类9', href: '#', src: '#'},
-  {name: '子类10', href: '#', src: '#'}
+  {name: '子类10', href: '#', src: '#'},
+  {name: '子类11', href: '#', src: '#'},
+  {name: '子类12', href: '#', src: '#'}
 ]
 export default {
   data: function () {
@@ -65,18 +67,22 @@ export default {
   height: calc(100% - 127px);
   top: 65px;
   left: 0px;
-  background: rgb(191, 191, 240);
-  display: flex;
+  background: #f7f7f7;
+  box-shadow:  -20px -20px 60px #ededed, 20px 20px 60px #ffffff;
   flex-flow: column nowrap;
   justify-content: space-around;
 }
 li{
   list-style: none;
+  height: 70px;
 }
 a{
   text-decoration: none;
   color: #666666;
   display: block;
-  line-height: 50px;
+  line-height: 70px;
+}
+.router-link-active{
+  background: #ffffff;
 }
 </style>
