@@ -5,20 +5,23 @@
         <button id="delete" @click="deleteGoods">删除</button>
     </div>
 
-    <cart_goods
-    v-for="item in goods"
-    :style=" justify(item.id) ? style : ''"
-    v-bind="item" :key="item.id"
-    @numberChanged = "changeNumber($event)"
-    @click.native="selectGoods(item)"></cart_goods>
+    <div id="goods">
+      <cartGoods
+      v-for="item in goods"
+      :style=" justify(item.id) ? style : ''"
+      v-bind="item" :key="item.id"
+      @numberChanged = "changeNumber($event)"
+      @click.native="selectGoods(item)"></cartGoods>
+      <p>------ 已经到底啦 ------</p>
+    </div>
 
     <div id="summary">
       <label>
         <input type="checkbox" @click="selectAll(checked)" v-model="checked">
         全选
       </label>
-      <span style="color: red">合计：￥{{total}}</span>
-      <button>结算</button>
+      <span>合计：￥{{total}}</span>
+      <button>提交订单</button>
     </div>
     <navbar name='cart'></navbar>
     <router-view/>
@@ -27,14 +30,19 @@
 
 <script>
 import navbar from '../components/navbar'
-import cartGoods from '../components/cart_goods'
+import cartGoods from '../components/cartGoods'
 
 // 商品列表
 var goods = [
-  {src: '#', name: '名称1', type: '型号', price: '10', number: 1, id: 1111},
-  {src: '#', name: '名称2', type: '型号', price: '5', number: 2, id: 24433},
-  {src: '#', name: '名称3', type: '型号', price: '100', number: 1, id: 344},
-  {src: '#', name: '名称4', type: '型号', price: '27', number: 1, id: 4546}
+  {src: 'https://iconfont.alicdn.com/t/7c3c9ef8-aa69-4c3d-8743-89942f4a91cc.png', name: '名称1', type: '型号', price: '10', number: 1, id: 1111},
+  {src: 'https://iconfont.alicdn.com/t/7c3c9ef8-aa69-4c3d-8743-89942f4a91cc.png', name: '名称2', type: '型号', price: '5', number: 2, id: 24433},
+  {src: 'https://iconfont.alicdn.com/t/7c3c9ef8-aa69-4c3d-8743-89942f4a91cc.png', name: '名称3', type: '型号', price: '110', number: 1, id: 344},
+  {src: 'https://iconfont.alicdn.com/t/7c3c9ef8-aa69-4c3d-8743-89942f4a91cc.png', name: '名称4', type: '型号', price: '36', number: 1, id: 5555},
+  {src: 'https://iconfont.alicdn.com/t/7c3c9ef8-aa69-4c3d-8743-89942f4a91cc.png', name: '名称5', type: '型号', price: '280', number: 1, id: 444},
+  {src: 'https://iconfont.alicdn.com/t/7c3c9ef8-aa69-4c3d-8743-89942f4a91cc.png', name: '名称6', type: '型号', price: '90', number: 1, id: 3444},
+  {src: 'https://iconfont.alicdn.com/t/7c3c9ef8-aa69-4c3d-8743-89942f4a91cc.png', name: '名称7', type: '型号', price: '190', number: 1, id: 244},
+  {src: 'https://iconfont.alicdn.com/t/7c3c9ef8-aa69-4c3d-8743-89942f4a91cc.png', name: '名称8', type: '型号', price: '12', number: 1, id: 3114},
+  {src: 'https://iconfont.alicdn.com/t/7c3c9ef8-aa69-4c3d-8743-89942f4a91cc.png', name: '名称9', type: '型号', price: '27', number: 1, id: 4546}
 ]
 
 // 更改数量
@@ -102,7 +110,7 @@ export default {
       goods: goods,
       operation: [],
       checked: false,
-      style: {border: '1px red solid'}
+      style: {boxShadow: '10px 10px 17px #d9d9d9, -10px -10px 17px #ffffff'}
     }
   },
   name: 'cart',
@@ -111,7 +119,7 @@ export default {
   },
   components: {
     navbar: navbar,
-    cart_goods: cartGoods
+    cartGoods: cartGoods
   },
   computed: {
     total: function () {
@@ -133,29 +141,46 @@ export default {
 </script>
 
 <style scoped>
-#cart_goods{
+#top{
+  height: 80px;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: #ffffff;
+  position: fixed;
+  z-index: 10;
+}
+#top span{
+  float: left;
+  margin-left: 20px;
+  margin-top: 30px;
+  color: #666666;
+  font-size: 30px;
+  font-weight: 700;
+}
+#top button{
+  display: none;
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  background: #ffffff;
+  border: none;
+  color: #666666;
+  font-size: 16px;
+}
+#goods{
+  position: relative;
+  top: 80px;
+  padding-bottom: 160px;
+}
+#cartGoods{
   margin: 20px 0;
   border-radius: 20px;
   background-color: #f7f7f7;
 }
-#top{
-  height: 60px;
-  width: 100%;
-  line-height: 60px;
-  background: #1b2ea7;
-  /* position: fixed; */
-}
-#top span{
-  float: left;
-  color: #ededee;
-}
-#top button{
-  float: right;
-}
 #summary{
   position: fixed;
-  border-top: 1px solid #666666;
-  height: 7%;
+  height: 90px;
   width: 90%;
   padding: 0 5%;
   left: 0px;
@@ -163,6 +188,23 @@ export default {
   display: flex;
   flex-flow: row;
   justify-content: space-between;
+  background: #ffffff;
   align-items: center;
+  box-shadow:  5px -5px 10px #d9d9d9, -5px 5px 10px #ffffff;
+}
+#summary span{
+  color: red;
+}
+#summary button{
+  height: 45px;
+  width: 100px;
+  outline: none;
+  background: #1c2fa8;
+  color: #f7f7f7;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 20px;
+  border: none;
 }
 </style>

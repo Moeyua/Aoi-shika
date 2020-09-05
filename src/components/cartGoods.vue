@@ -1,5 +1,5 @@
 <template>
-  <div id="cart_goods">
+  <div id="cartGoods">
       <img :src="src">
       <div id="details">
         <p id="name">{{name}}</p>
@@ -45,14 +45,15 @@ export default {
 *{
   color: #666666;
 }
-#cart_goods{
+#cartGoods{
     position: relative;
-    background: rgb(253, 253, 254);
+    background: #f7f7f7;
     height: 100px;
-    width: 100%;
-    border: 1px #666666 inset;
+    width: 95%;
+    margin-left: 10px;
+    border: none;
 }
-#cart_goods img{
+#cartGoods img{
   position: absolute;
     left: 0;
     border-radius: 20px;

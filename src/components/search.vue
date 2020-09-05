@@ -26,8 +26,7 @@ export default {
   height: 60px;
   position: fixed;
   width: 100%;
-  background-color: #1e32b4;
-  box-shadow:  5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+  background-color: #ffffff00;
   overflow: hidden;
   z-index: 999;
 }
@@ -60,5 +59,10 @@ export default {
   outline: none;
   padding-left: 50px;
   font-size: 16px;
+  box-shadow:  5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+  background: #ffffff00;
+}
+#search input:focus{
+  background: #ffffff;
 }
 </style>

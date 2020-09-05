@@ -85,4 +85,7 @@ a{
 .router-link-active{
   background: #ffffff;
 }
+#navbar{
+  background: #ffffff;
+}
 </style>
