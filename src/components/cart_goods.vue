@@ -9,8 +9,8 @@
       <div id="operation">
         <span id="number">{{numbers}}</span>
         <div>
-          <button @click="add">+</button>
-          <button @click="sub">-</button>
+          <button @click.stop="add">+</button>
+          <button @click.stop="sub">-</button>
         </div>
       </div>
 
@@ -23,13 +23,13 @@ function add () {
   this.$emit('numberChanged', [this.name, 1])
 }
 function sub () {
-  if (this.numbers > 0) {
+  if (this.numbers > 1) {
     this.numbers--
     this.$emit('numberChanged', [this.name, -1])
   }
 }
 export default {
-  props: ['src', 'name', 'type', 'price', 'number'],
+  props: ['src', 'name', 'type', 'price', 'number', 'id'],
   data () {
     return {
       numbers: this.number
@@ -50,6 +50,7 @@ export default {
     background: rgb(253, 253, 254);
     height: 100px;
     width: 100%;
+    border: 1px #666666 inset;
 }
 #cart_goods img{
   position: absolute;
