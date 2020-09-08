@@ -18,6 +18,7 @@
 
 <script>
 	// 这是注释
+	//这也是注释
 var data = [
   {img: 'https://iconfont.alicdn.com/t/b47bfe93-3c53-4686-b76a-f976e922fdfc.png', href: '#'},
   {img: 'https://iconfont.alicdn.com/t/ce628170-bdee-4f1b-b5a3-47da9444873b.png', href: '#'},
