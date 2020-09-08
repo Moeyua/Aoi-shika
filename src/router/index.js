@@ -19,7 +19,7 @@ export default new Router({
     {path: '/my', name: 'my', component: my},
     {path: '/regist', name: 'regist', component: regist},
     {path: '/login', name: 'login', component: login},
-    {path: '/search/:result?time=' + new Date().getTime(), name: 'searchRes', component: searchRes},
+    {path: '/search/:result', name: 'searchRes', component: searchRes},
     {
       path: '/all',
       redirect: '/all/父类1',
