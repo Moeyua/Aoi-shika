@@ -10,7 +10,8 @@
       <recommand></recommand>
       <br>
       <h2>热门商品</h2>
-      <hotGoods></hotGoods>
+      <recommand></recommand>
+      <p>------ 已经到底啦 ------</p>
     </div>
     <navbar name='home'></navbar>
     <router-view/>
@@ -58,7 +59,7 @@ export default {
 }
 #main{
   position: absolute;
-  margin: 0 10px;
+  margin: 0 10px 80px 10px;
   left: 0;
   top: 70px;
   z-index: 0;

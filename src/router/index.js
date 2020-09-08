@@ -7,6 +7,7 @@ import all from '@/views/all'
 import regist from '@/views/regist'
 import login from '@/views/login'
 import level2 from '@/components/level2'
+import searchRes from '@/views/searchRes'
 
 Vue.use(Router)
 
@@ -18,6 +19,7 @@ export default new Router({
     {path: '/my', name: 'my', component: my},
     {path: '/regist', name: 'regist', component: regist},
     {path: '/login', name: 'login', component: login},
+    {path: '/search/:result?time=' + new Date().getTime(), name: 'searchRes', component: searchRes},
     {
       path: '/all',
       redirect: '/all/父类1',

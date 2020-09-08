@@ -2,19 +2,24 @@
 <div id="top">
   <div id="search">
     <img src="../../static/scan_light.png" alt="扫一扫" id="scan-img">
-    <input type="search" placeholder="搜索"/>
-    <img src="../../static/search_light.png" alt="搜索" id="search-img">
+    <input type="search" placeholder="搜索" v-model="res" />
+    <router-link :to="{name:'searchRes',
+      params: {result: res}}">
+      <img src="../../static/search_light.png" alt="搜索" id="search-img">
+    </router-link>
   </div>
 </div>
 </template>
 
 <script>
 export default {
+  props: ['value'],
   data () {
-    return {}
+    return {res: this.value}
   },
   name: 'search',
-  methods: {},
+  methods: {
+  },
   components: {}
 }
 </script>
@@ -58,6 +63,7 @@ export default {
   border: 1px solid #1c2fa8;
   outline: none;
   padding-left: 50px;
+  padding-right: 50px;
   font-size: 16px;
   box-shadow:  5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
   background: #ffffff00;
