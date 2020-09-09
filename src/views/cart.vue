@@ -21,7 +21,9 @@
         全选
       </label>
       <span>合计：￥{{total}}</span>
-      <button>提交订单</button>
+      <router-link :to="{name:'order'}">
+          <button>提交订单</button>
+      </router-link>
     </div>
     <navbar name='cart'></navbar>
     <router-view/>

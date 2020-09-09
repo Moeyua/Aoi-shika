@@ -12,7 +12,7 @@
           {{description}}
       </div>
       <div id="navbar">
-          <button>提交订单</button>
+          <button>加入购物车</button>
       </div>
   </div>
 </template>
@@ -55,13 +55,6 @@ img{
     float: right;
     margin: 0 10px;
 }
-#navbar{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-}
 #description{
     font-size: 15px;
 }
@@ -69,6 +62,16 @@ img{
     font-weight: 700;
     text-align: left;
     margin: 10px 0;
+}
+#navbar{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 button{
   height: 45px;

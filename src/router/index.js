@@ -9,6 +9,7 @@ import login from '@/views/login'
 import level2 from '@/components/level2'
 import searchRes from '@/views/searchRes'
 import details from '@/views/details'
+import order from '@/views/order'
 
 Vue.use(Router)
 
@@ -22,6 +23,7 @@ export default new Router({
     {path: '/login', name: 'login', component: login},
     {path: '/search/:result', name: 'searchRes', component: searchRes},
     {path: '/details/:name', name: 'details', component: details},
+    {path: '/order', name: 'order', component: order},
     {
       path: '/all',
       redirect: '/all/父类1',
