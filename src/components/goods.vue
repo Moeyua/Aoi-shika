@@ -1,15 +1,15 @@
 <template>
-  <a id="goods" :href="href">
+  <router-link id="goods" :to="{name:'details', params: {name: name}}">
       <div id="pic"><img :src="src" :alt="name"></div>
       <div id="name">{{name}}</div>
       <div id="price">￥{{price}}</div>
-  </a>
+  </router-link>
 </template>
 
 <script>
 var data = {}
 export default {
-  props: ['name', 'price', 'src', 'href'],
+  props: ['name', 'price', 'src'],
   data () {
     return {data}
   },

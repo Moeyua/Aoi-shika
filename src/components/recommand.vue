@@ -8,14 +8,14 @@
 <script>
 import goods from './goods'
 var goodsList = [
-  {name: '商品名称', price: 'xx', src: 'https://iconfont.alicdn.com/s/a0746618-4087-4dd5-a9e7-8df2b0578d47_origin.svg', href: '#'},
-  {name: '商品名称', price: 'xx', src: 'https://iconfont.alicdn.com/s/a0746618-4087-4dd5-a9e7-8df2b0578d47_origin.svg', href: '#'},
-  {name: '商品名称', price: 'xx', src: 'https://iconfont.alicdn.com/s/a0746618-4087-4dd5-a9e7-8df2b0578d47_origin.svg', href: '#'},
-  {name: '商品名称', price: 'xx', src: 'https://iconfont.alicdn.com/s/a0746618-4087-4dd5-a9e7-8df2b0578d47_origin.svg', href: '#'},
-  {name: '商品名称', price: 'xx', src: 'https://iconfont.alicdn.com/s/a0746618-4087-4dd5-a9e7-8df2b0578d47_origin.svg', href: '#'},
-  {name: '商品名称', price: 'xx', src: 'https://iconfont.alicdn.com/s/a0746618-4087-4dd5-a9e7-8df2b0578d47_origin.svg', href: '#'},
-  {name: '商品名称', price: 'xx', src: 'https://iconfont.alicdn.com/s/a0746618-4087-4dd5-a9e7-8df2b0578d47_origin.svg', href: '#'},
-  {name: '商品名称', price: 'xx', src: 'https://iconfont.alicdn.com/s/a0746618-4087-4dd5-a9e7-8df2b0578d47_origin.svg', href: '#'}
+  {name: '商品名称', price: 'xx', src: 'https://iconfont.alicdn.com/s/a0746618-4087-4dd5-a9e7-8df2b0578d47_origin.svg'},
+  {name: '商品名称', price: 'xx', src: 'https://iconfont.alicdn.com/s/a0746618-4087-4dd5-a9e7-8df2b0578d47_origin.svg'},
+  {name: '商品名称', price: 'xx', src: 'https://iconfont.alicdn.com/s/a0746618-4087-4dd5-a9e7-8df2b0578d47_origin.svg'},
+  {name: '商品名称', price: 'xx', src: 'https://iconfont.alicdn.com/s/a0746618-4087-4dd5-a9e7-8df2b0578d47_origin.svg'},
+  {name: '商品名称', price: 'xx', src: 'https://iconfont.alicdn.com/s/a0746618-4087-4dd5-a9e7-8df2b0578d47_origin.svg'},
+  {name: '商品名称', price: 'xx', src: 'https://iconfont.alicdn.com/s/a0746618-4087-4dd5-a9e7-8df2b0578d47_origin.svg'},
+  {name: '商品名称', price: 'xx', src: 'https://iconfont.alicdn.com/s/a0746618-4087-4dd5-a9e7-8df2b0578d47_origin.svg'},
+  {name: '商品名称', price: 'xx', src: 'https://iconfont.alicdn.com/s/a0746618-4087-4dd5-a9e7-8df2b0578d47_origin.svg'}
 ]
 export default {
   data () {

@@ -32,6 +32,10 @@ export default {
     margin: 50px 0 0 0;
     position: fixed;
 }
+#sort span{
+    height: 30px;
+    margin: 0 40px;
+}
 #recommand{
     margin-top: 90px;
 }
