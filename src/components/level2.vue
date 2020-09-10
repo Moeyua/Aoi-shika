@@ -1,7 +1,7 @@
 <template>
   <ul id="lv2">
         <li v-for="item in this.$route.params.li2" :key="item.name">
-          <router-link to="item.href">
+          <router-link :to="{name: 'searchRes', params: {result: item.name}}">
               <img :src="item.src">
               {{item.name}}
           </router-link>
