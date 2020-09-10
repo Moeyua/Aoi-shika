@@ -3,7 +3,6 @@
       <img :src="src">
       <div id="details">
         <p id="name">{{name}}</p>
-        <p id="type">{{type}}</p>
         <p id="price">￥{{price}}</p>
       </div>
       <div id="operation">
@@ -29,7 +28,7 @@ function sub () {
   }
 }
 export default {
-  props: ['src', 'name', 'type', 'price', 'number', 'id'],
+  props: ['src', 'name', 'price', 'number', 'id'],
   data () {
     return {
       numbers: this.number

@@ -129,8 +129,8 @@ export default {
       for (var i = 0; i < this.operation.length; i++) {
         var id = this.operation[i]
         for (var j = 0; j < this.goods.length; j++) {
-          if (goods[j].id === id) {
-            sum += goods[j].price * goods[j].number
+          if (this.goods[j].id === id) {
+            sum += this.goods[j].price * this.goods[j].number
             break
           }
         }

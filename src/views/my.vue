@@ -27,7 +27,7 @@ var src = function (name) {
 var data = {
   name: 'Evod Moeyua',
   lists: [
-    {title: '我的订单', href: '#', id: 'form'},
+    {title: '我的订单', href: '/myOrder', id: 'form'},
     {title: '待付款', href: '#', id: 'pay'},
     {title: '待发货', href: '#', id: 'send'},
     {title: '待收货', href: '#', id: 'deliver'},
