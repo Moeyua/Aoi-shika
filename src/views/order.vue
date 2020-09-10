@@ -1,13 +1,15 @@
 <template>
     <div id="order">
       <div id="top">
-        <span>订单详情</span>
+        <span>确认订单</span>
       </div>
       <!-- 占位盒子 -->
       <div style="height:100px"></div>
 
       <!-- 收货地址 -->
-      <div id="address"></div>
+      <div id="address">
+        {{address}}
+      </div>
 
       <!-- 商品列表 -->
       <div id="good" v-for="item in goods" :key="item.name">
@@ -40,7 +42,8 @@ export default {
   data () {
     return {
       goods,
-      operation: this.$route.params.operation
+      operation: this.$route.params.operation,
+      address: 'xxxxxxxxxxxxxxxxxx'
     }
   },
   components: {
@@ -50,6 +53,12 @@ export default {
 </script>
 
 <style scoped>
+#address{
+  height: 100px;
+  width: 300px;
+  text-align: center;
+  line-height: 100px;
+}
 #order{
   color: #666666;
 }

@@ -26,7 +26,7 @@ export default {
   box-shadow:  5px 5px 10px #d2d2d2, -5px -5px 10px #ffffff;
   height: 145px;
   width: 40%;
-  margin: 5px;
+  margin: 10px;
   border-radius: 10px;
   text-align: left;
   font-size: 13px;
