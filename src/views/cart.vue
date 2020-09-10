@@ -21,7 +21,7 @@
         全选
       </label>
       <span>合计：￥{{total}}</span>
-      <router-link :to="{name:'order'}">
+      <router-link :to="{name:'order', params:{operation: operation,total: total}}">
           <button>提交订单</button>
       </router-link>
     </div>
