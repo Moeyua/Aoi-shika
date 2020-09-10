@@ -4,6 +4,8 @@
     <search></search>
     <div id="main">
       <swipe></swipe>
+      <br>
+      <h2>热门品牌</h2>
       <classfication></classfication>
       <br>
       <h2>为你推荐</h2>

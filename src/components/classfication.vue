@@ -1,46 +1,39 @@
 <template>
   <div id="classfication">
-      <div class="box4"> <img v-bind:src="data[0].img"> </div>
-      <div class="box4"> <img v-bind:src="data[1].img"> </div>
-      <div class="box4">
-        <div class="box8"> <img v-bind:src="data[2].img"> </div>
-        <div class="box8"> <img v-bind:src="data[3].img"> </div>
-      </div>
-      <div class="box4">
-        <div class="box8"> <img v-bind:src="data[4].img"> </div>
-        <div class="box8">
-            <div class="box16"> <img v-bind:src="data[5].img"> </div>
-            <div class="box16"> <img v-bind:src="data[6].img"> </div>
-        </div>
-      </div>
+      <div class="box8"><img :src="src('apple')"></div>
+      <div class="box8"><img :src="src('samsung')"></div>
+      <div class="box8"><img :src="src('huawei')"></div>
+      <div class="box8"><img :src="src('lg')"></div>
+      <div class="box8"><img :src="src('nvidia')"></div>
+      <div class="box8"><img :src="src('hp')"></div>
+      <div class="box8"><img :src="src('beats')"></div>
+      <div class="box8"><img :src="src('asus')"></div>
   </div>
 </template>
 
 <script>
-var data = [
-  {img: 'https://iconfont.alicdn.com/t/b47bfe93-3c53-4686-b76a-f976e922fdfc.png', href: '#'},
-  {img: 'https://iconfont.alicdn.com/t/ce628170-bdee-4f1b-b5a3-47da9444873b.png', href: '#'},
-  {img: 'https://iconfont.alicdn.com/t/82fb65b3-21c0-4e82-8211-833b27617844.png', href: '#'},
-  {img: 'https://iconfont.alicdn.com/t/fb5db791-42a0-4ac3-9593-1cf83626e87a.png', href: '#'},
-  {img: 'https://iconfont.alicdn.com/t/4e2e7848-7358-43e5-9f77-cecd00ae61d6.png', href: '#'},
-  {img: 'https://iconfont.alicdn.com/t/7b4b45f4-c9ca-4328-8fca-33c3aabbd459.png', href: '#'},
-  {img: 'https://iconfont.alicdn.com/t/79a91543-8662-4b50-8786-c38feb5c677d.png', href: '#'}
-]
+var data = {
+}
 export default {
   data () {
-    return {
-      data: data
-    }
+    return data
   },
   name: 'classfication',
   methods: {},
-  components: {}
+  components: {},
+  computed: {
+    src: function () {
+      return function (name) {
+        return '../../static/' + name + '.png?time=' + new Date().getTime()
+      }
+    }
+  }
 }
 </script>
 
 <style scoped>
 #classfication{
-  background: #ffffff;
+  background: #f7f7f7;
   height: 180px;
   padding: 10px;
   margin-bottom: 10px;
@@ -50,30 +43,65 @@ export default {
   align-items: center;
   justify-content: space-around;
 }
-.box4 img,
+img{
+  width: 64px;
+  height: 64px;
+}
+/* .box4 img,
 .box4{
     width: 160px;
     height: 85px;
-    background: rgb(161, 177, 233);
+    background: #e57066;
+    color: #28292b;
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
     justify-content: space-between;
     overflow:initial;
+    line-height: 85px;
+    font-size: 20px;
+    font-weight: 1000;
+    letter-spacing: 2px;
 }
 .box8 img,
 .box8{
     width: 75px;
     height: 85px;
-    background: rgb(80, 162, 73);
+    background: #005397;
+    color: #e13334;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
+    text-align: center;
+    line-height: 85px;
+    font-size: 20px;
+    font-weight: 1000;
+    letter-spacing: 2px;
 }
 .box16 img,
 .box16{
     width: 75px;
     height: 40px;
-    background: cyan;
+    background: #f0cf61;
+    color: #ebe8e1;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+} */
+.box8{
+    width: 75px;
+    height: 75px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    text-align: center;
+    line-height: 85px;
+    font-size: 20px;
+    font-weight: 1000;
+    letter-spacing: 2px;
+    box-shadow:  5px 5px 10px #d2d2d2, -5px -5px 10px #ffffff;
+    border-radius: 10px;
 }
-
 </style>
